@@ -1,1 +1,38 @@
-{}
+{
+  "index": "Introduction",
+  "getting-started": "Getting Started",
+  "-- Usage": {
+    "type": "separator",
+    "title": "Usage"
+  },
+  "basic-usage": "Basic Usage",
+  "administration": "Administration",
+  "development": "Development",
+  "-- API Reference": {
+    "type": "separator",
+    "title": "API Reference"
+  },
+  "rest-api": "REST API",
+  "-- Libraries & Packages": {
+    "type": "separator",
+    "title": "Libraries & Packages"
+  },
+  "pyro": "",
+  "ignite": "",
+  "-- More": {
+    "type": "separator",
+    "title": "More"
+  },
+  "faq": "FAQ",
+  "common-issues": "",
+  "main-spark-link": {
+    "href": "https://spark-cms.io",
+    "title": "SPARK Homepage ↗",
+    "newWindow": true
+  },
+  "legal-spark-link": {
+    "href": "https://spark-cms.io/legal",
+    "title": "Legal Information ↗",
+    "newWindow": true
+  }
+}

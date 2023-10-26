@@ -1,0 +1,16 @@
+```js filename="ignite.js" showLineNumbers copy
+import { Ignite } from "@spark-cms/ignite";
+
+// Create a new Ignite instance
+const spark = new Ignite({
+  name: "SPARK CMS",
+  project: "SPARK Blog",
+  token: "SPARK-a216ee62-b106-447d-98ff-e99cd70d3340",
+});
+
+// Fetch data from the CMS.
+const data = await spark.fetchContent("blog", "posts");
+
+// Fetch a whole page from the CMS.
+const page = await spark.fetchPage("blog");
+```

@@ -2,11 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins.ttf') format('truetype-variations');
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Italic.ttf') format('truetype-variations');
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+code, code * {
+  font-family: "JetBrains Mono", monospace !important;
+}
+
+:root, .dark {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 39, 39, 42;
+  --background-end-rgb: 15, 15, 15;  
+  --shiki-color-text: #414141;
+  --shiki-color-background: #0f0f0f !important;
+  --shiki-token-constant: #fff !important;
+  --shiki-token-string: #ff7b28 !important;
+  --shiki-token-comment: #9D9DA4 !important;
+  --shiki-token-keyword: #f42a8b !important;
+  --shiki-token-parameter: #ff9800;
+  --shiki-token-function: #fa535a !important;
+  --shiki-token-string-expression: #ff7b28 !important;
+  --shiki-token-punctuation: #212121;
+  --shiki-token-link: #ff7b28 !important;
+  color-scheme: rgb(39, 39, 42);
+}
+
+.nextra-code-block {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.nextra-code-block > div:first-of-type, .nextra-code-block button {
+  background-color: #18181b !important;
+}
+
+.nextra-code-block > pre {
+  background-color: #0f0f0f !important;
+}
+
+/* const customTheme = {
+  lineNumberColor: '#27272a',
+  lineNumberBgColor: '#0f0f0f',
+  backgroundColor: '#0f0f0f',
+  textColor: '#ffffff',
+  substringColor: '#ffffff',
+  keywordColor: '#F42A8B',
+  attributeColor: '#66d9ef',
+  selectorAttributeColor: '#f92672',
+  docTagColor: '#ffffff',
+  nameColor: '#ffffff',
+  builtInColor: '#a6e22e',
+  literalColor: '#ae81ff',
+  bulletColor: '#ffffff',
+  codeColor: '#ffffff',
+  additionColor: '#ffffff',
+  regexpColor: '#ffffff',
+  symbolColor: '#ffffff',
+  variableColor: '#ffffff',
+  templateVariableColor: '#ffffff',
+  linkColor: '#ffffff',
+  selectorClassColor: '#ffffff',
+  typeColor: '#ffffff',
+  stringColor: '#FF7B28',
+  selectorIdColor: '#ffffff',
+  quoteColor: '#ffffff',
+  templateTagColor: '#ffffff',
+  deletionColor: '#ffffff',
+  titleColor: '#ffffff',
+  sectionColor: '#ffffff',
+  commentColor: '#9D9DA4',
+  metaKeywordColor: '#ffffff',
+  metaColor: '#ffffff',
+  functionColor: '#FA535A',
+  numberColor: '#ffffff',
+}; */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -16,6 +98,33 @@
   }
 }
 
-body {
-  background: #0b0b0b;
+:is(html[class~="dark"] body) {
+  background-color: #0b0b0b !important;
+}
+
+:is(html[class~=dark] .dark\:nx-bg-dark) {
+  background-color: #0b0b0b !important;
+}
+
+:is(html[class~=dark] .dark\:nx-shadow-\[0_-12px_16px_\#111\]) {
+  box-shadow: none !important;
+}
+
+:is(html[class~=dark] .dark\:nx-bg-neutral-900) {
+  background-color: #0f0f0f !important;
+}
+
+:is(html[class~=dark] footer hr.dark\:nx-border-neutral-800) {
+  border: none;
+  background-image: linear-gradient(to right, #ff7b28, #f42a8b);
+  height: 1px;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@supports (-webkit-backdrop-filter:blur(1px)) or ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  :is(html[class~=dark] .nextra-nav-container-blur.nx-pointer-events-none) {
+    background-color: rgb(11, 11, 11, 0.8) !important;
+  }
 }
