@@ -49,7 +49,7 @@ export default {
   primarySaturation: 100,
   logo: (
     <div style={{ display: "flex", alignItems: "center", fontSize: "1.2rem", fontWeight: "900", color: "#fff" }}>
-      <img src="/img/spark_logo.svg" alt="Logo" style={{ marginRight: "0.5rem", width: "3rem" }} />
+      <img src="/img/spark_logo.svg" width={48} height={48} alt="Logo" style={{ marginRight: "0.5rem", width: "3rem" }} />
       <span>SPARK</span>
     </div>
   ),

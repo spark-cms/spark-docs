@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: 'Poppins';
   src: url('/fonts/Poppins.ttf') format('truetype-variations');
   font-display: swap;
@@ -17,7 +17,7 @@
 
 * {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
-}
+} */
 
 code, code * {
   font-family: "JetBrains Mono", monospace !important;
