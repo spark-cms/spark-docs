@@ -53,43 +53,6 @@ code, code * {
   background-color: #0f0f0f !important;
 }
 
-/* const customTheme = {
-  lineNumberColor: '#27272a',
-  lineNumberBgColor: '#0f0f0f',
-  backgroundColor: '#0f0f0f',
-  textColor: '#ffffff',
-  substringColor: '#ffffff',
-  keywordColor: '#F42A8B',
-  attributeColor: '#66d9ef',
-  selectorAttributeColor: '#f92672',
-  docTagColor: '#ffffff',
-  nameColor: '#ffffff',
-  builtInColor: '#a6e22e',
-  literalColor: '#ae81ff',
-  bulletColor: '#ffffff',
-  codeColor: '#ffffff',
-  additionColor: '#ffffff',
-  regexpColor: '#ffffff',
-  symbolColor: '#ffffff',
-  variableColor: '#ffffff',
-  templateVariableColor: '#ffffff',
-  linkColor: '#ffffff',
-  selectorClassColor: '#ffffff',
-  typeColor: '#ffffff',
-  stringColor: '#FF7B28',
-  selectorIdColor: '#ffffff',
-  quoteColor: '#ffffff',
-  templateTagColor: '#ffffff',
-  deletionColor: '#ffffff',
-  titleColor: '#ffffff',
-  sectionColor: '#ffffff',
-  commentColor: '#9D9DA4',
-  metaKeywordColor: '#ffffff',
-  metaColor: '#ffffff',
-  functionColor: '#FA535A',
-  numberColor: '#ffffff',
-}; */
-
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -121,6 +84,14 @@ code, code * {
   width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+:is(html[class~=dark] table .dark\:nx-border-gray-600) {
+  border-color: #27272a !important;
+}
+
+:is(html[class~=dark] table .even\:dark\:nx-bg-gray-600\/20):nth-child(2n) {
+  background-color: #18181b !important;
 }
 
 @supports (-webkit-backdrop-filter:blur(1px)) or ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {

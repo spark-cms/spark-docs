@@ -28,23 +28,37 @@ export default {
         <meta name="twitter:image:width" content="2400" />
         <meta name="twitter:image:height" content="1256" />
         <meta name="twitter:image:alt" content="SPARK Logo on a dark background" />
+        <meta name="color-scheme" content="dark" />
       </>
     )
   },
   useNextSeoProps() {
     const pathname = usePathname();
 
+    if(pathname.includes('ignite')) {
+      if(pathname === '/ignite') {
+        return {
+          titleTemplate: 'Ignite - SPARK'
+        }
+      } else {
+        return {
+          titleTemplate: 'Ignite: %s - SPARK'
+        }
+      }
+    }
+    
+
     if (pathname !== '/') {
       return {
         titleTemplate: '%s - SPARK'
       }
-    } else {
-      return {
-        titleTemplate: 'Documentation - SPARK'
-      }
+    }
+
+    return {
+      titleTemplate: 'Documentation - SPARK'
     }
   },
-  darkMode: true,
+  darkMode: false,
   primaryHue: 23,
   primarySaturation: 100,
   logo: (

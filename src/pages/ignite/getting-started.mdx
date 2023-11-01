@@ -1,0 +1,39 @@
+# Getting Started
+Ignite works with JavaScript and TypeScript. You can use it in any Node.js application, and it should theoretically work with any other JavaScript frameworks
+like Deno and Bun as well.
+
+## Installation
+You can install Ignite via your favorite package manager. 
+
+```sh npm2yarn
+npm i @spark-cms/ignite
+```
+
+## Usage
+It is based on Object-Oriented Programming (OOP) and uses a class-based approach to fetch data. To start, you need to import the Ignite package and create a new Instance.
+
+```js filename="ignite.js" showLineNumbers copy
+import { Ignite } from "@spark-cms/ignite";
+
+const spark = new Ignite({
+  name: "John Doe",
+  project: "Private Blog",
+  token: "SPARK-a216ee62-b106-447d-98ff-e99cd70d3340",
+});
+```
+
+You'll need to provide the following parameters:
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The name of the user the project belongs to. |
+| `project` | `string` | The name of the project. |
+| `token` | `string` | The API token of the project. |
+
+Optionally, you can can provide the `cache` parameter to enable caching.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `cache` | `number` | The time in seconds to cache the data. |
+
+If no `cache` parameter is provided, the data will not be cached.

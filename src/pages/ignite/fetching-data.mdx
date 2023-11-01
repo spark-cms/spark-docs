@@ -1,0 +1,187 @@
+# Fetching Data
+
+Ignite lets you fetch multiple types of data in different ways.
+
+## `fetchContent`
+The `fetchContent` function allows you to fetch a specific type of content from a page.
+
+### Parameters
+The following parameters are required:
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `page` | `string` | The API address of the page. |
+| `content` | `string` | The API address of the content to fetch. |
+
+The following parameters are optional:
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `fields` | `string[]` | The fields which to include. Leave empty to include everything. |
+
+### Example
+```js filename="ignite.js" showLineNumbers copy
+// Import the Ignite class
+import { Ignite } from "@spark-cms/ignite";
+
+// Create a new Ignite instance
+const spark = new Ignite({
+  name: "John Doe",
+  project: "Private Blog",
+  token: "SPARK-a216ee62-b106-447d-98ff-e99cd70d3340",
+});
+
+// Fetch content from the CMS.
+const content = await spark.fetchContent("blog", "posts");
+```
+
+The `content` variable will now contain an array of all the posts on the blog.
+
+import { Callout } from "nextra/components";
+
+<Callout>
+  **Good to know:** 
+  <br />Every item in the array will always include the date at which it has been created and it's ID.
+</Callout>
+
+## `fetchContentByIdentifier`
+The `fetchContentByIdentifier` function allows you to fetch a specific type of content from a page by it's identifier.
+
+<Callout>
+  **Good to know:** 
+  <br />The identifier can either be an ID or a slug. To learn more about slugs, check out the [Slugs](/docs/slugs) page. {/* TODO */}
+</Callout>
+
+### Parameters
+The following parameters are required:
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `page` | `string` | The API address of the page. |
+| `content` | `string` | The identifier of the content to fetch. Format: `type:identifier` |
+
+The following parameters are optional:
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `fields` | `string[]` | The fields which to include. Leave empty to include everything. |
+
+### Example
+```js filename="ignite.js" showLineNumbers copy
+// Import the Ignite class
+import { Ignite } from "@spark-cms/ignite";
+
+// Create a new Ignite instance
+const spark = new Ignite({
+  name: "John Doe",
+  project: "Private Blog",
+  token: "SPARK-a216ee62-b106-447d-98ff-e99cd70d3340",
+});
+
+// Fetch content from the CMS.
+const content = await spark.fetchContentByIdentifier("blog", "posts:aezg4x1g3zdsn7afusyy");
+
+// Using a slug
+const content = await spark.fetchContentByIdentifier("blog", "posts:my-first-post");
+```
+
+The `content` variable will now contain the first post on the blog.
+
+## `fechPage`
+The `fetchPage` function allows you to fetch an entire page from the CMS.
+
+### Parameters
+The following parameters are required:
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `page` | `string` | The API address of the page. |
+
+The following parameters are optional:
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `content` | `string[]` | The API addresses of the content which should be included. Leave empty to include everything. |
+
+### Example
+```js filename="ignite.js" showLineNumbers copy
+// Import the Ignite class
+import { Ignite } from "@spark-cms/ignite";
+
+// Create a new Ignite instance
+const spark = new Ignite({
+  name: "John Doe",
+  project: "Private Blog",
+  token: "SPARK-a216ee62-b106-447d-98ff-e99cd70d3340",
+});
+
+// Fetch a page from the CMS.
+const page = await spark.fetchPage("blog");
+```
+
+The `page` variable will now contain the entire blog page, all posts and all other content.
+
+## `fetchGlobalContent`
+The `fetchGlobalContent` function allows you to fetch all global content of a specific type from the CMS. To learn more about global content, check out the [Global Content](/docs/global-content) page. {/* TODO */}
+
+### Parameters
+The following parameters are required:
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `content` | `string` | The API address of the page. |
+| `fields` | `string[]` | The fields which to include. Leave empty to include everything. |
+
+### Example
+```js filename="ignite.js" showLineNumbers copy
+// Import the Ignite class
+import { Ignite } from "@spark-cms/ignite";
+
+// Create a new Ignite instance
+const spark = new Ignite({
+  name: "John Doe",
+  project: "Private Blog",
+  token: "SPARK-a216ee62-b106-447d-98ff-e99cd70d3340",
+});
+
+// Fetch global content from the CMS.
+const content = await spark.fetchGlobalContent("contact-information");
+```
+
+The `content` variable will now contain an array of all the contact information defined in the CMS.
+
+## `fetchGlobalContentByIdentifier`
+The `fetchGlobalContentByIdentifier` function allows you to fetch a specific type of global content from the CMS by it's identifier. To learn more about global content, check out the [Global Content](/docs/global-content) page. {/* TODO */}
+
+### Parameters
+The following parameters are required:
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `contentIdentifier` | `string` | The identifier of the content to fetch. Format: `type:identifier` |
+| `fields` | `string[]` | The fields which to include. Leave empty to include everything. |
+
+### Example
+```js filename="ignite.js" showLineNumbers copy
+// Import the Ignite class
+import { Ignite } from "@spark-cms/ignite";
+
+// Create a new Ignite instance
+const spark = new Ignite({
+  name: "John Doe",
+  project: "Private Blog",
+  token: "SPARK-a216ee62-b106-447d-98ff-e99cd70d3340",
+});
+
+// Fetch global content from the CMS.
+const content = await spark.fetchGlobalContentByIdentifier("contact-information:aezg4x1g3zdsn7afusyy");
+
+// Using a slug
+const content = await spark.fetchGlobalContentByIdentifier("contact-information:instagram");
+```
+
+The `content` variable will now contain data about a specific navigation item.
+
+<Callout>
+  **Good to know:** 
+  <br />The identifier can either be an ID or a slug. To learn more about slugs, check out the [Slugs](/docs/slugs) page. {/* TODO */}
+</Callout>
