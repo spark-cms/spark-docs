@@ -8,15 +8,15 @@ The `fetchContent` function allows you to fetch a specific type of content from 
 ### Parameters
 The following parameters are required:
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `page` | `string` | The API address of the page. |
+| Parameter | Type     | Description                              |
+|-----------|----------|------------------------------------------|
+| `page`    | `string` | The API address of the page.             |
 | `content` | `string` | The API address of the content to fetch. |
 
 The following parameters are optional:
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `fields` | `string[]` | The fields which to include. Leave empty to include everything. |
+| Parameter | Type       | Description                                                     |
+|-----------|------------|-----------------------------------------------------------------|
+| `fields`  | `string[]` | The fields which to include. Leave empty to include everything. |
 
 ### Example
 ```js filename="ignite.js" showLineNumbers copy
@@ -54,16 +54,16 @@ The `fetchContentByIdentifier` function allows you to fetch a specific type of c
 ### Parameters
 The following parameters are required:
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `page` | `string` | The API address of the page. |
+| Parameter | Type     | Description                                                       |
+|-----------|----------|-------------------------------------------------------------------|
+| `page`    | `string` | The API address of the page.                                      |
 | `content` | `string` | The identifier of the content to fetch. Format: `type:identifier` |
 
 The following parameters are optional:
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `fields` | `string[]` | The fields which to include. Leave empty to include everything. |
+| Parameter | Type       | Description                                                     |
+|-----------|------------|-----------------------------------------------------------------|
+| `fields`  | `string[]` | The fields which to include. Leave empty to include everything. |
 
 ### Example
 ```js filename="ignite.js" showLineNumbers copy
@@ -92,14 +92,14 @@ The `fetchPage` function allows you to fetch an entire page from the CMS.
 ### Parameters
 The following parameters are required:
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `page` | `string` | The API address of the page. |
+| Parameter | Type     | Description                  |
+|-----------|----------|------------------------------|
+| `page`    | `string` | The API address of the page. |
 
 The following parameters are optional:
 
-| Parameter | Type | Description |
-| --- | --- | --- |
+| Parameter | Type       | Description                                                                                   |
+|---------- |------------|---------------------------------------------------------------------------------------------- |
 | `content` | `string[]` | The API addresses of the content which should be included. Leave empty to include everything. |
 
 ### Example
@@ -126,10 +126,10 @@ The `fetchGlobalContent` function allows you to fetch all global content of a sp
 ### Parameters
 The following parameters are required:
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `content` | `string` | The API address of the page. |
-| `fields` | `string[]` | The fields which to include. Leave empty to include everything. |
+| Parameter | Type       | Description                                                     |
+|-----------|------------|-----------------------------------------------------------------|
+| `content` | `string`   | The API address of the page.                                    |
+| `fields`  | `string[]` | The fields which to include. Leave empty to include everything. |
 
 ### Example
 ```js filename="ignite.js" showLineNumbers copy
@@ -155,10 +155,10 @@ The `fetchGlobalContentByIdentifier` function allows you to fetch a specific typ
 ### Parameters
 The following parameters are required:
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `contentIdentifier` | `string` | The identifier of the content to fetch. Format: `type:identifier` |
-| `fields` | `string[]` | The fields which to include. Leave empty to include everything. |
+| Parameter           | Type       | Description                                                       |
+|---------------------|------------|-------------------------------------------------------------------|
+| `contentIdentifier` | `string`   | The identifier of the content to fetch. Format: `type:identifier` |
+| `fields`            | `string[]` | The fields which to include. Leave empty to include everything.   |
 
 ### Example
 ```js filename="ignite.js" showLineNumbers copy

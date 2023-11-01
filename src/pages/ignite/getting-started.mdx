@@ -12,28 +12,35 @@ npm i @spark-cms/ignite
 ## Usage
 It is based on Object-Oriented Programming (OOP) and uses a class-based approach to fetch data. To start, you need to import the Ignite package and create a new Instance.
 
+### Parameters
+You'll need to provide the following parameters:
+
+| Parameter | Type     | Description                                  |
+|-----------|----------|----------------------------------------------|
+| `name`    | `string` | The name of the user the project belongs to. |
+| `project` | `string` | The name of the project.                     |
+| `token`   | `string` | The API token of the project.                |
+
+Optionally, you can can provide the `cache` parameter to enable caching.
+
+## Test
+
+| Parameter | Type     | Description                            |
+|-----------|----------|--------------------------------------- |
+| `cache`   | `number` | The time in seconds to cache the data. |
+
+If no `cache` parameter is provided, the data will not be cached. This is how you would create a new instance:
+
+### Example
 ```js filename="ignite.js" showLineNumbers copy
+// Import the Ignite package
 import { Ignite } from "@spark-cms/ignite";
 
+// Create a new instance
 const spark = new Ignite({
   name: "John Doe",
   project: "Private Blog",
   token: "SPARK-a216ee62-b106-447d-98ff-e99cd70d3340",
+  cache: 60 * 60 // Cache for 1 hour
 });
 ```
-
-You'll need to provide the following parameters:
-
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `name` | `string` | The name of the user the project belongs to. |
-| `project` | `string` | The name of the project. |
-| `token` | `string` | The API token of the project. |
-
-Optionally, you can can provide the `cache` parameter to enable caching.
-
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `cache` | `number` | The time in seconds to cache the data. |
-
-If no `cache` parameter is provided, the data will not be cached.

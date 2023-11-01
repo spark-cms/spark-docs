@@ -94,8 +94,18 @@ code, code * {
   background-color: #18181b !important;
 }
 
+:is(html[class~=dark] div.nextra-banner-container) {
+  background: #27272a !important;
+} 
+
 @supports (-webkit-backdrop-filter:blur(1px)) or ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
   :is(html[class~=dark] .nextra-nav-container-blur.nx-pointer-events-none) {
     background-color: rgb(11, 11, 11, 0.8) !important;
   }
+}
+
+article img {
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid #27272a;
 }
